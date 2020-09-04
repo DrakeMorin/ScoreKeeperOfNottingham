@@ -1,0 +1,599 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DE8C90C22501C20500C951EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C90C12501C20500C951EB /* AppDelegate.swift */; };
+		DE8C90C42501C20500C951EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C90C32501C20500C951EB /* SceneDelegate.swift */; };
+		DE8C90C62501C20500C951EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C90C52501C20500C951EB /* ContentView.swift */; };
+		DE8C90C82501C20800C951EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8C90C72501C20800C951EB /* Assets.xcassets */; };
+		DE8C90CB2501C20800C951EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8C90CA2501C20800C951EB /* Preview Assets.xcassets */; };
+		DE8C90CE2501C20800C951EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8C90CC2501C20800C951EB /* LaunchScreen.storyboard */; };
+		DE8C90D92501C20900C951EB /* Score_Keeper_of_NottinghamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C90D82501C20900C951EB /* Score_Keeper_of_NottinghamTests.swift */; };
+		DE8C90E42501C20900C951EB /* Score_Keeper_of_NottinghamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C90E32501C20900C951EB /* Score_Keeper_of_NottinghamUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DE8C90D52501C20900C951EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE8C90B62501C20500C951EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE8C90BD2501C20500C951EB;
+			remoteInfo = "Score Keeper of Nottingham";
+		};
+		DE8C90E02501C20900C951EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE8C90B62501C20500C951EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE8C90BD2501C20500C951EB;
+			remoteInfo = "Score Keeper of Nottingham";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DE8C90BE2501C20500C951EB /* Score Keeper of Nottingham.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Score Keeper of Nottingham.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE8C90C12501C20500C951EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DE8C90C32501C20500C951EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		DE8C90C52501C20500C951EB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DE8C90C72501C20800C951EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DE8C90CA2501C20800C951EB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DE8C90CD2501C20800C951EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DE8C90CF2501C20800C951EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE8C90D42501C20900C951EB /* Score Keeper of NottinghamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Score Keeper of NottinghamTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE8C90D82501C20900C951EB /* Score_Keeper_of_NottinghamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score_Keeper_of_NottinghamTests.swift; sourceTree = "<group>"; };
+		DE8C90DA2501C20900C951EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE8C90DF2501C20900C951EB /* Score Keeper of NottinghamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Score Keeper of NottinghamUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE8C90E32501C20900C951EB /* Score_Keeper_of_NottinghamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score_Keeper_of_NottinghamUITests.swift; sourceTree = "<group>"; };
+		DE8C90E52501C20900C951EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE8C90BB2501C20500C951EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE8C90D12501C20900C951EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE8C90DC2501C20900C951EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DE8C90B52501C20500C951EB = {
+			isa = PBXGroup;
+			children = (
+				DE8C90C02501C20500C951EB /* Score Keeper of Nottingham */,
+				DE8C90D72501C20900C951EB /* Score Keeper of NottinghamTests */,
+				DE8C90E22501C20900C951EB /* Score Keeper of NottinghamUITests */,
+				DE8C90BF2501C20500C951EB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DE8C90BF2501C20500C951EB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE8C90BE2501C20500C951EB /* Score Keeper of Nottingham.app */,
+				DE8C90D42501C20900C951EB /* Score Keeper of NottinghamTests.xctest */,
+				DE8C90DF2501C20900C951EB /* Score Keeper of NottinghamUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE8C90C02501C20500C951EB /* Score Keeper of Nottingham */ = {
+			isa = PBXGroup;
+			children = (
+				DE8C90C12501C20500C951EB /* AppDelegate.swift */,
+				DE8C90C32501C20500C951EB /* SceneDelegate.swift */,
+				DE8C90C52501C20500C951EB /* ContentView.swift */,
+				DE8C90C72501C20800C951EB /* Assets.xcassets */,
+				DE8C90CC2501C20800C951EB /* LaunchScreen.storyboard */,
+				DE8C90CF2501C20800C951EB /* Info.plist */,
+				DE8C90C92501C20800C951EB /* Preview Content */,
+			);
+			path = "Score Keeper of Nottingham";
+			sourceTree = "<group>";
+		};
+		DE8C90C92501C20800C951EB /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DE8C90CA2501C20800C951EB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DE8C90D72501C20900C951EB /* Score Keeper of NottinghamTests */ = {
+			isa = PBXGroup;
+			children = (
+				DE8C90D82501C20900C951EB /* Score_Keeper_of_NottinghamTests.swift */,
+				DE8C90DA2501C20900C951EB /* Info.plist */,
+			);
+			path = "Score Keeper of NottinghamTests";
+			sourceTree = "<group>";
+		};
+		DE8C90E22501C20900C951EB /* Score Keeper of NottinghamUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DE8C90E32501C20900C951EB /* Score_Keeper_of_NottinghamUITests.swift */,
+				DE8C90E52501C20900C951EB /* Info.plist */,
+			);
+			path = "Score Keeper of NottinghamUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DE8C90BD2501C20500C951EB /* Score Keeper of Nottingham */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE8C90E82501C20900C951EB /* Build configuration list for PBXNativeTarget "Score Keeper of Nottingham" */;
+			buildPhases = (
+				DE8C90BA2501C20500C951EB /* Sources */,
+				DE8C90BB2501C20500C951EB /* Frameworks */,
+				DE8C90BC2501C20500C951EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Score Keeper of Nottingham";
+			productName = "Score Keeper of Nottingham";
+			productReference = DE8C90BE2501C20500C951EB /* Score Keeper of Nottingham.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DE8C90D32501C20900C951EB /* Score Keeper of NottinghamTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE8C90EB2501C20900C951EB /* Build configuration list for PBXNativeTarget "Score Keeper of NottinghamTests" */;
+			buildPhases = (
+				DE8C90D02501C20900C951EB /* Sources */,
+				DE8C90D12501C20900C951EB /* Frameworks */,
+				DE8C90D22501C20900C951EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE8C90D62501C20900C951EB /* PBXTargetDependency */,
+			);
+			name = "Score Keeper of NottinghamTests";
+			productName = "Score Keeper of NottinghamTests";
+			productReference = DE8C90D42501C20900C951EB /* Score Keeper of NottinghamTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DE8C90DE2501C20900C951EB /* Score Keeper of NottinghamUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE8C90EE2501C20900C951EB /* Build configuration list for PBXNativeTarget "Score Keeper of NottinghamUITests" */;
+			buildPhases = (
+				DE8C90DB2501C20900C951EB /* Sources */,
+				DE8C90DC2501C20900C951EB /* Frameworks */,
+				DE8C90DD2501C20900C951EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE8C90E12501C20900C951EB /* PBXTargetDependency */,
+			);
+			name = "Score Keeper of NottinghamUITests";
+			productName = "Score Keeper of NottinghamUITests";
+			productReference = DE8C90DF2501C20900C951EB /* Score Keeper of NottinghamUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE8C90B62501C20500C951EB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1170;
+				LastUpgradeCheck = 1170;
+				ORGANIZATIONNAME = "Drake Morin";
+				TargetAttributes = {
+					DE8C90BD2501C20500C951EB = {
+						CreatedOnToolsVersion = 11.7;
+					};
+					DE8C90D32501C20900C951EB = {
+						CreatedOnToolsVersion = 11.7;
+						TestTargetID = DE8C90BD2501C20500C951EB;
+					};
+					DE8C90DE2501C20900C951EB = {
+						CreatedOnToolsVersion = 11.7;
+						TestTargetID = DE8C90BD2501C20500C951EB;
+					};
+				};
+			};
+			buildConfigurationList = DE8C90B92501C20500C951EB /* Build configuration list for PBXProject "Score Keeper of Nottingham" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DE8C90B52501C20500C951EB;
+			productRefGroup = DE8C90BF2501C20500C951EB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE8C90BD2501C20500C951EB /* Score Keeper of Nottingham */,
+				DE8C90D32501C20900C951EB /* Score Keeper of NottinghamTests */,
+				DE8C90DE2501C20900C951EB /* Score Keeper of NottinghamUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE8C90BC2501C20500C951EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE8C90CE2501C20800C951EB /* LaunchScreen.storyboard in Resources */,
+				DE8C90CB2501C20800C951EB /* Preview Assets.xcassets in Resources */,
+				DE8C90C82501C20800C951EB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE8C90D22501C20900C951EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE8C90DD2501C20900C951EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE8C90BA2501C20500C951EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE8C90C22501C20500C951EB /* AppDelegate.swift in Sources */,
+				DE8C90C42501C20500C951EB /* SceneDelegate.swift in Sources */,
+				DE8C90C62501C20500C951EB /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE8C90D02501C20900C951EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE8C90D92501C20900C951EB /* Score_Keeper_of_NottinghamTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE8C90DB2501C20900C951EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE8C90E42501C20900C951EB /* Score_Keeper_of_NottinghamUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DE8C90D62501C20900C951EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE8C90BD2501C20500C951EB /* Score Keeper of Nottingham */;
+			targetProxy = DE8C90D52501C20900C951EB /* PBXContainerItemProxy */;
+		};
+		DE8C90E12501C20900C951EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE8C90BD2501C20500C951EB /* Score Keeper of Nottingham */;
+			targetProxy = DE8C90E02501C20900C951EB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DE8C90CC2501C20800C951EB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE8C90CD2501C20800C951EB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DE8C90E62501C20900C951EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DE8C90E72501C20900C951EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DE8C90E92501C20900C951EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Score Keeper of Nottingham/Preview Content\"";
+				DEVELOPMENT_TEAM = L3DY2C7H28;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Score Keeper of Nottingham/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ca.drakemorin.Score-Keeper-of-Nottingham";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DE8C90EA2501C20900C951EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Score Keeper of Nottingham/Preview Content\"";
+				DEVELOPMENT_TEAM = L3DY2C7H28;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Score Keeper of Nottingham/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ca.drakemorin.Score-Keeper-of-Nottingham";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DE8C90EC2501C20900C951EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L3DY2C7H28;
+				INFOPLIST_FILE = "Score Keeper of NottinghamTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ca.drakemorin.Score-Keeper-of-NottinghamTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Score Keeper of Nottingham.app/Score Keeper of Nottingham";
+			};
+			name = Debug;
+		};
+		DE8C90ED2501C20900C951EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L3DY2C7H28;
+				INFOPLIST_FILE = "Score Keeper of NottinghamTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ca.drakemorin.Score-Keeper-of-NottinghamTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Score Keeper of Nottingham.app/Score Keeper of Nottingham";
+			};
+			name = Release;
+		};
+		DE8C90EF2501C20900C951EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L3DY2C7H28;
+				INFOPLIST_FILE = "Score Keeper of NottinghamUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ca.drakemorin.Score-Keeper-of-NottinghamUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Score Keeper of Nottingham";
+			};
+			name = Debug;
+		};
+		DE8C90F02501C20900C951EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L3DY2C7H28;
+				INFOPLIST_FILE = "Score Keeper of NottinghamUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ca.drakemorin.Score-Keeper-of-NottinghamUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Score Keeper of Nottingham";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE8C90B92501C20500C951EB /* Build configuration list for PBXProject "Score Keeper of Nottingham" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE8C90E62501C20900C951EB /* Debug */,
+				DE8C90E72501C20900C951EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE8C90E82501C20900C951EB /* Build configuration list for PBXNativeTarget "Score Keeper of Nottingham" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE8C90E92501C20900C951EB /* Debug */,
+				DE8C90EA2501C20900C951EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE8C90EB2501C20900C951EB /* Build configuration list for PBXNativeTarget "Score Keeper of NottinghamTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE8C90EC2501C20900C951EB /* Debug */,
+				DE8C90ED2501C20900C951EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE8C90EE2501C20900C951EB /* Build configuration list for PBXNativeTarget "Score Keeper of NottinghamUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE8C90EF2501C20900C951EB /* Debug */,
+				DE8C90F02501C20900C951EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DE8C90B62501C20500C951EB /* Project object */;
+}
