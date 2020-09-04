@@ -10,6 +10,7 @@ import Foundation
 
 struct PlayerScore {
     let name: String
+    let playerHand: Player
     let score: Int
     let isAppleKing: Bool
     let isAppleQueen: Bool
@@ -19,4 +20,5 @@ struct PlayerScore {
     let isBreadQueen: Bool
     let isChickenKing: Bool
     let isChickenQueen: Bool
+    var isWinner = false
 }

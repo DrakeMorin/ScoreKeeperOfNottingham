@@ -43,4 +43,14 @@ struct Player {
     var totalChickens: Int {
         return chickenCount + dualChickenCount * CHICKENS_ON_DUAL_CHICKEN
     }
+    
+    var totalLegalGoods: Int {
+        return appleCount + cheeseCount + breadCount + chickenCount
+    }
+    
+    var totalContrabandGoods: Int {
+        return pepperCount + meadCount + silkCount + crossbowCount +
+            greenApplesCount + goldenApplesCount + goudaCheeseCount + blueCheseCount +
+            ryeBreadCount + pumpernickelCount + dualChickenCount
+    }
 }

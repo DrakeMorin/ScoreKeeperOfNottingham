@@ -22,7 +22,8 @@ func scoreGame(for players: [Player]) -> [PlayerScore] {
     let chickenBonuses = computeBonusScoreForGood(for: players.map { ($0.name, $0.totalChickens) }, kingBonus: KING_BONUS_CHICKEN, queenBonus: QUEEN_BONUS_CHICKEN)
     for player in players {
         scores.append(PlayerScore(
-            name: player.name, score: computeRawMaterialScore(for: player) + computeBonusScore(for: player, appleBonuses: appleBonuses, cheeseBonuses: cheeseBonuses, breadBonuses: breadBonuses, chickenBonuses: chickenBonuses),
+            name: player.name, playerHand: player,
+            score: computeRawMaterialScore(for: player) + computeBonusScore(for: player, appleBonuses: appleBonuses, cheeseBonuses: cheeseBonuses, breadBonuses: breadBonuses, chickenBonuses: chickenBonuses),
             isAppleKing: appleBonuses.0.contains(player.name), isAppleQueen: appleBonuses.2.contains(player.name),
             isCheeseKing: cheeseBonuses.0.contains(player.name), isCheeseQueen: cheeseBonuses.0.contains(player.name),
             isBreadKing: breadBonuses.0.contains(player.name), isBreadQueen: breadBonuses.2.contains(player.name),
@@ -30,7 +31,7 @@ func scoreGame(for players: [Player]) -> [PlayerScore] {
         )
     }
     
-    return scores
+    return orderScores(scores)
 }
 
 private func computeBonusScore(for player: Player, appleBonuses: (Kings, Score, Queens, Score),
@@ -109,4 +110,42 @@ private func computeBonusScoreForGood(for players: [(Name, Count)], kingBonus: I
     let queenScorePerPlayer: Int = (queenBonus / queenPlayers.count)
     let queens = queenPlayers.map { $0.0 }
     return ([kingPlayer], kingBonus, queens, queenScorePerPlayer)
+}
+
+// TODO: Order sort player scores by place, ie. first, second, third, etc
+private func orderScores(_ scores: [PlayerScore]) -> [PlayerScore] {
+    guard let bestScore = scores.map({ $0.score }).max() else { return scores }
+    
+    var finalScores = scores
+    var winners: [String] = []
+    let bestScoringPlayers = scores.filter({ $0.score == bestScore })
+    
+    if bestScoringPlayers.count > 1 {
+        // In the event of a tie, the player with the most legal goods wins
+        let mostLegalGoods = bestScoringPlayers.map { $0.playerHand.totalLegalGoods }.max()
+        let mostLegalGoodsPlayers = bestScoringPlayers.filter { $0.playerHand.totalLegalGoods == mostLegalGoods }
+        
+        if mostLegalGoodsPlayers.count > 1 {
+            // In the event that multiple players have the most legal goods, the winner is decided by
+            // the most contraband goods, if there is still a tie the players share the victory
+            let mostContrabandGoods = mostLegalGoodsPlayers.map { $0.playerHand.totalLegalGoods }.max()
+            let mostContrabandGoodsPlayers = mostLegalGoodsPlayers.filter { $0.playerHand.totalContrabandGoods == mostContrabandGoods }
+            
+            for player in mostContrabandGoodsPlayers {
+                winners.append(player.name)
+            }
+        } else {
+            // We have only one winner
+            winners.append(mostLegalGoodsPlayers.first!.name)
+        }
+    }
+    
+    // Update scores to denote winners
+    for i in 1..<finalScores.count {
+        if winners.contains(finalScores[i].name) {
+            finalScores[i].isWinner = true
+        }
+    }
+    
+    return finalScores
 }
