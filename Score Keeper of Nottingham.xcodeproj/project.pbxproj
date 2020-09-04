@@ -15,6 +15,10 @@
 		DE8C90CE2501C20800C951EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8C90CC2501C20800C951EB /* LaunchScreen.storyboard */; };
 		DE8C90D92501C20900C951EB /* Score_Keeper_of_NottinghamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C90D82501C20900C951EB /* Score_Keeper_of_NottinghamTests.swift */; };
 		DE8C90E42501C20900C951EB /* Score_Keeper_of_NottinghamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C90E32501C20900C951EB /* Score_Keeper_of_NottinghamUITests.swift */; };
+		DE8C90F32501C2AF00C951EB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C90F22501C2AF00C951EB /* Constants.swift */; };
+		DE8C90F52501C48D00C951EB /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C90F42501C48D00C951EB /* Player.swift */; };
+		DE8C90F72501C5B900C951EB /* PlayerScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C90F62501C5B900C951EB /* PlayerScore.swift */; };
+		DE8C90F92501C68F00C951EB /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C90F82501C68F00C951EB /* Score.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		DE8C90DF2501C20900C951EB /* Score Keeper of NottinghamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Score Keeper of NottinghamUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8C90E32501C20900C951EB /* Score_Keeper_of_NottinghamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score_Keeper_of_NottinghamUITests.swift; sourceTree = "<group>"; };
 		DE8C90E52501C20900C951EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE8C90F22501C2AF00C951EB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DE8C90F42501C48D00C951EB /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		DE8C90F62501C5B900C951EB /* PlayerScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerScore.swift; sourceTree = "<group>"; };
+		DE8C90F82501C68F00C951EB /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,7 @@
 		DE8C90C02501C20500C951EB /* Score Keeper of Nottingham */ = {
 			isa = PBXGroup;
 			children = (
+				DE8C90F12501C29000C951EB /* Models */,
 				DE8C90C12501C20500C951EB /* AppDelegate.swift */,
 				DE8C90C32501C20500C951EB /* SceneDelegate.swift */,
 				DE8C90C52501C20500C951EB /* ContentView.swift */,
@@ -134,6 +143,17 @@
 				DE8C90E52501C20900C951EB /* Info.plist */,
 			);
 			path = "Score Keeper of NottinghamUITests";
+			sourceTree = "<group>";
+		};
+		DE8C90F12501C29000C951EB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DE8C90F22501C2AF00C951EB /* Constants.swift */,
+				DE8C90F42501C48D00C951EB /* Player.swift */,
+				DE8C90F62501C5B900C951EB /* PlayerScore.swift */,
+				DE8C90F82501C68F00C951EB /* Score.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,9 +287,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE8C90F92501C68F00C951EB /* Score.swift in Sources */,
 				DE8C90C22501C20500C951EB /* AppDelegate.swift in Sources */,
+				DE8C90F72501C5B900C951EB /* PlayerScore.swift in Sources */,
 				DE8C90C42501C20500C951EB /* SceneDelegate.swift in Sources */,
 				DE8C90C62501C20500C951EB /* ContentView.swift in Sources */,
+				DE8C90F52501C48D00C951EB /* Player.swift in Sources */,
+				DE8C90F32501C2AF00C951EB /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
