@@ -9,6 +9,7 @@
 import Foundation
 
 struct Player {
+    let id = UUID()
     let name: String
     let appleCount: Int
     let cheeseCount: Int

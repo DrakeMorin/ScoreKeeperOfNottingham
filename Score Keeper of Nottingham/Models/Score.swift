@@ -8,26 +8,26 @@
 
 import Foundation
 
-private typealias Name = String
+private typealias ID = UUID
 private typealias Count = Int
-private typealias Kings = [String]
+private typealias Kings = [ID]
 private typealias Score = Int
-private typealias Queens = [String]
+private typealias Queens = [ID]
 
 func scoreGame(for players: [Player]) -> [PlayerScore] {
     var scores: [PlayerScore] = []
-    let appleBonuses = computeBonusScoreForGood(for: players.map { ($0.name, $0.totalApples) }, kingBonus: KING_BONUS_APPLE, queenBonus: QUEEN_BONUS_APPLE)
-    let cheeseBonuses = computeBonusScoreForGood(for: players.map { ($0.name, $0.totalCheese) }, kingBonus: KING_BONUS_CHEESE, queenBonus: QUEEN_BONUS_CHEESE)
-    let breadBonuses = computeBonusScoreForGood(for: players.map { ($0.name, $0.totalBread) }, kingBonus: KING_BONUS_BREAD, queenBonus: QUEEN_BONUS_BREAD)
-    let chickenBonuses = computeBonusScoreForGood(for: players.map { ($0.name, $0.totalChickens) }, kingBonus: KING_BONUS_CHICKEN, queenBonus: QUEEN_BONUS_CHICKEN)
+    let appleBonuses = computeBonusScoreForGood(for: players.map { ($0.id, $0.totalApples) }, kingBonus: KING_BONUS_APPLE, queenBonus: QUEEN_BONUS_APPLE)
+    let cheeseBonuses = computeBonusScoreForGood(for: players.map { ($0.id, $0.totalCheese) }, kingBonus: KING_BONUS_CHEESE, queenBonus: QUEEN_BONUS_CHEESE)
+    let breadBonuses = computeBonusScoreForGood(for: players.map { ($0.id, $0.totalBread) }, kingBonus: KING_BONUS_BREAD, queenBonus: QUEEN_BONUS_BREAD)
+    let chickenBonuses = computeBonusScoreForGood(for: players.map { ($0.id, $0.totalChickens) }, kingBonus: KING_BONUS_CHICKEN, queenBonus: QUEEN_BONUS_CHICKEN)
     for player in players {
         scores.append(PlayerScore(
-            name: player.name, playerHand: player,
+            player: player,
             score: computeRawMaterialScore(for: player) + computeBonusScore(for: player, appleBonuses: appleBonuses, cheeseBonuses: cheeseBonuses, breadBonuses: breadBonuses, chickenBonuses: chickenBonuses),
-            isAppleKing: appleBonuses.0.contains(player.name), isAppleQueen: appleBonuses.2.contains(player.name),
-            isCheeseKing: cheeseBonuses.0.contains(player.name), isCheeseQueen: cheeseBonuses.0.contains(player.name),
-            isBreadKing: breadBonuses.0.contains(player.name), isBreadQueen: breadBonuses.2.contains(player.name),
-            isChickenKing: chickenBonuses.0.contains(player.name), isChickenQueen: chickenBonuses.2.contains(player.name))
+            isAppleKing: appleBonuses.0.contains(player.id), isAppleQueen: appleBonuses.2.contains(player.id),
+            isCheeseKing: cheeseBonuses.0.contains(player.id), isCheeseQueen: cheeseBonuses.0.contains(player.id),
+            isBreadKing: breadBonuses.0.contains(player.id), isBreadQueen: breadBonuses.2.contains(player.id),
+            isChickenKing: chickenBonuses.0.contains(player.id), isChickenQueen: chickenBonuses.2.contains(player.id))
         )
     }
     
@@ -40,30 +40,30 @@ private func computeBonusScore(for player: Player, appleBonuses: (Kings, Score, 
     var score = 0
     
     // Apple bonuses
-    if appleBonuses.0.contains(player.name) {
+    if appleBonuses.0.contains(player.id) {
         score += appleBonuses.1
-    } else if appleBonuses.2.contains(player.name) {
+    } else if appleBonuses.2.contains(player.id) {
         score += appleBonuses.3
     }
     
     // Cheese bonuses
-    if cheeseBonuses.0.contains(player.name) {
+    if cheeseBonuses.0.contains(player.id) {
         score += cheeseBonuses.1
-    } else if cheeseBonuses.2.contains(player.name) {
+    } else if cheeseBonuses.2.contains(player.id) {
         score += cheeseBonuses.3
     }
     
     // Bread bonuses
-    if breadBonuses.0.contains(player.name) {
+    if breadBonuses.0.contains(player.id) {
         score += breadBonuses.1
-    } else if breadBonuses.2.contains(player.name) {
+    } else if breadBonuses.2.contains(player.id) {
         score += breadBonuses.3
     }
     
     // Chicken bonuses
-    if chickenBonuses.0.contains(player.name) {
+    if chickenBonuses.0.contains(player.id) {
         score += chickenBonuses.1
-    } else if chickenBonuses.2.contains(player.name) {
+    } else if chickenBonuses.2.contains(player.id) {
         score += chickenBonuses.3
     }
     
@@ -83,7 +83,7 @@ private func computeRawMaterialScore(for player: Player) -> Int {
         player.coinageValue
 }
 
-private func computeBonusScoreForGood(for players: [(Name, Count)], kingBonus: Int, queenBonus: Int) -> (Kings, Score, Queens, Score) {
+private func computeBonusScoreForGood(for players: [(ID, Count)], kingBonus: Int, queenBonus: Int) -> (Kings, Score, Queens, Score) {
     let sortedPlayers = players.sorted { $0.1 > $1.1 }
     
     guard let largestAmount = sortedPlayers.first?.1 else { return ([], 0, [], 0) }
@@ -117,32 +117,32 @@ private func orderScores(_ scores: [PlayerScore]) -> [PlayerScore] {
     guard let bestScore = scores.map({ $0.score }).max() else { return scores }
     
     var finalScores = scores
-    var winners: [String] = []
+    var winners: [ID] = []
     let bestScoringPlayers = scores.filter({ $0.score == bestScore })
     
     if bestScoringPlayers.count > 1 {
         // In the event of a tie, the player with the most legal goods wins
-        let mostLegalGoods = bestScoringPlayers.map { $0.playerHand.totalLegalGoods }.max()
-        let mostLegalGoodsPlayers = bestScoringPlayers.filter { $0.playerHand.totalLegalGoods == mostLegalGoods }
+        let mostLegalGoods = bestScoringPlayers.map { $0.player.totalLegalGoods }.max()
+        let mostLegalGoodsPlayers = bestScoringPlayers.filter { $0.player.totalLegalGoods == mostLegalGoods }
         
         if mostLegalGoodsPlayers.count > 1 {
             // In the event that multiple players have the most legal goods, the winner is decided by
             // the most contraband goods, if there is still a tie the players share the victory
-            let mostContrabandGoods = mostLegalGoodsPlayers.map { $0.playerHand.totalLegalGoods }.max()
-            let mostContrabandGoodsPlayers = mostLegalGoodsPlayers.filter { $0.playerHand.totalContrabandGoods == mostContrabandGoods }
+            let mostContrabandGoods = mostLegalGoodsPlayers.map { $0.player.totalLegalGoods }.max()
+            let mostContrabandGoodsPlayers = mostLegalGoodsPlayers.filter { $0.player.totalContrabandGoods == mostContrabandGoods }
             
             for player in mostContrabandGoodsPlayers {
-                winners.append(player.name)
+                winners.append(player.player.id)
             }
         } else {
             // We have only one winner
-            winners.append(mostLegalGoodsPlayers.first!.name)
+            winners.append(mostLegalGoodsPlayers.first!.player.id)
         }
     }
     
     // Update scores to denote winners
     for i in 1..<finalScores.count {
-        if winners.contains(finalScores[i].name) {
+        if winners.contains(finalScores[i].player.id) {
             finalScores[i].isWinner = true
         }
     }
