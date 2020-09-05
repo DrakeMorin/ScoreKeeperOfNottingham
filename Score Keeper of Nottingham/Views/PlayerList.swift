@@ -20,9 +20,9 @@ struct PlayerList: View {
     
     var body: some View {
         NavigationView {
-            List(listData.playerData, id: \.player.id) { playerScore in
-                NavigationLink(destination: PlayerDetail(player: playerScore.player)) {
-                    PlayerRow(playerScore: playerScore)
+            List(listData.playerData) { player in
+                NavigationLink(destination: PlayerDetail(player: player)) {
+                    PlayerRow(player: player)
                 }
             }
             .navigationBarTitle("Players")

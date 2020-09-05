@@ -14,7 +14,7 @@ struct PlayerDetail: View {
     var player: Player
     
     var playerIndex: Int {
-        listData.playerData.firstIndex(where: { $0.player.id == player.id })!
+        listData.playerData.firstIndex(where: { $0.id == player.id })!
     }
     
     var body: some View {
@@ -22,7 +22,7 @@ struct PlayerDetail: View {
             HStack {
                 Text("Player Name")
                 Spacer()
-                TextField("", text: $listData.playerData[playerIndex].player.name
+                TextField("", text: $listData.playerData[playerIndex].name
                 )
                     .frame(width: 160)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -61,7 +61,7 @@ struct PlayerDetail: View {
 
 struct PlayerDetail_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerDetail(player: dummyPlayerScore.player)
+        PlayerDetail(player: dummyPlayer)
             .environmentObject(ListData())
     }
 }

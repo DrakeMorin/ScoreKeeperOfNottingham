@@ -10,5 +10,5 @@ import SwiftUI
 import Combine
 
 final class ListData: ObservableObject {
-    @Published var playerData: [PlayerScore] = [dummyPlayerScore]
+    @Published var playerData: [Player] = [dummyPlayer]
 }
