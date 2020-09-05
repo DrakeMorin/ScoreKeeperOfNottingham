@@ -86,7 +86,8 @@ private func computeRawMaterialScore(for player: Player) -> Int {
 private func computeBonusScoreForGood(for players: [(ID, Count)], kingBonus: Int, queenBonus: Int) -> (Kings, Score, Queens, Score) {
     let sortedPlayers = players.sorted { $0.1 > $1.1 }
     
-    guard let largestAmount = sortedPlayers.first?.1 else { return ([], 0, [], 0) }
+    guard let largestAmount = sortedPlayers.first?.1,
+        largestAmount > 0 else { return ([], 0, [], 0) }
     
     let kingPlayers = players.filter { $0.1 == largestAmount }
     
@@ -102,7 +103,8 @@ private func computeBonusScoreForGood(for players: [(ID, Count)], kingBonus: Int
     
     // Award the queen bonus
     let remainingPlayers = sortedPlayers.filter { $0.1 != largestAmount }.sorted { $0.1 > $1.1 }
-    guard let nextLargestAmount = remainingPlayers.first?.1 else { return ([kingPlayer], kingBonus, [], 0) }
+    guard let nextLargestAmount = remainingPlayers.first?.1,
+        nextLargestAmount > 0 else { return ([kingPlayer], kingBonus, [], 0) }
     let queenPlayers = remainingPlayers.filter { $0.1 == nextLargestAmount }
     
     // In the event of multiple players having the second most of one good, the Queen bonus is
