@@ -8,9 +8,10 @@
 
 import Foundation
 
+// TODO Restructure this so that a Player holds a PlayerScore object (not vice versa)
 struct Player {
     let id = UUID()
-    let name: String
+    var name: String
     let appleCount: Int
     let cheeseCount: Int
     let breadCount: Int

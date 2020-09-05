@@ -9,7 +9,7 @@
 import Foundation
 
 struct PlayerScore {
-    let player: Player
+    var player: Player
     let score: Int
     let isAppleKing: Bool
     let isAppleQueen: Bool
