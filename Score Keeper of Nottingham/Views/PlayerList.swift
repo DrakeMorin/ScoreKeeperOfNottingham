@@ -8,16 +8,9 @@
 
 import SwiftUI
 
-protocol PlayerListActionable: class {
-    func playerListDidAdd()
-    func playerListDidClear()
-}
-
 struct PlayerList: View {
     @EnvironmentObject var listData: ListData
-    
-    weak var actionable: PlayerListActionable?
-    
+
     var body: some View {
         NavigationView {
             List(listData.playerData) { player in
@@ -27,10 +20,20 @@ struct PlayerList: View {
             }
             .navigationBarTitle("Players")
             .navigationBarItems(
-                trailing: Button(action: { self.actionable?.playerListDidAdd() }, label: { Text("Add") })
+                trailing: Button(action: { self.addNewPlayer() }, label: { Text("Add") })
             )
             
         }
+    }
+
+    func addNewPlayer() {
+        let newPlayer = Player()
+        newPlayer.name = "New player"
+        listData.playerData.append(newPlayer)
+    }
+
+    func clearPlayers() {
+        listData.playerData = []
     }
 }
 

@@ -10,14 +10,14 @@ import SwiftUI
 import Combine
 
 struct NumericTextField: View {
-    @State private var value = "0"
+    @State private var value = "" // Empty will show a 0 placeholder
     let text: String
     
     var body: some View {
         HStack{
             Text(self.text)
             Spacer()
-            TextField(text, text: $value)
+            TextField("0", text: $value)
                 .frame(width: 40)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .keyboardType(.numberPad)
@@ -27,7 +27,7 @@ struct NumericTextField: View {
                     if filtered != newValue {
                         self.value = filtered
                     }
-            }
+                }
         }
         
     }

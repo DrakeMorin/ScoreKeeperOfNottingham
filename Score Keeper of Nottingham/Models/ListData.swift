@@ -11,4 +11,5 @@ import Combine
 
 final class ListData: ObservableObject {
     @Published var playerData: [Player] = [dummyPlayer]
+    @Published var forceUpdate = false // Hack: toggle this so that the list rerenders
 }

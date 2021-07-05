@@ -19,9 +19,50 @@ class Score_Keeper_of_NottinghamTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testPlayerWithNoItemsScore() throws {
+        let player1 = Player(name: "Tess")
+        let scoredPlayers = scoreGame(for: [player1])
+        
+        XCTAssertEqual(scoredPlayers.count, 1, "There should only be one returned player with a score")
+        let scoredPlayer = scoredPlayers.first!
+        
+        XCTAssertEqual(scoredPlayer.id, player1.id, "Player should retain the same ID")
+        XCTAssertEqual(scoredPlayer.name, player1.name, "Player should retain the same name")
+        
+        XCTAssertFalse(scoredPlayer.scoreData.isAppleKing)
+        XCTAssertFalse(scoredPlayer.scoreData.isCheeseKing)
+        XCTAssertFalse(scoredPlayer.scoreData.isBreadKing)
+        XCTAssertFalse(scoredPlayer.scoreData.isChickenKing)
+        XCTAssertFalse(scoredPlayer.scoreData.isAppleQueen)
+        XCTAssertFalse(scoredPlayer.scoreData.isCheeseQueen)
+        XCTAssertFalse(scoredPlayer.scoreData.isBreadQueen)
+        XCTAssertFalse(scoredPlayer.scoreData.isChickenQueen)
+        
+        XCTAssertEqual(scoredPlayer.score, 0)
+    }
+
+    func testSinglePlayerScore() throws {
+        // Test scoring a single player who has at least one of every good from the base game
+        let player1 = Player(name: "Tess", appleCount: 13, cheeseCount: 8, breadCount: 6, chickenCount: 3, pepperCount: 2, meadCount: 4, silkCount: 2, crossbowCount: 5, coinageValue: 50)
+        let scoredPlayers = scoreGame(for: [player1])
+        
+        XCTAssertEqual(scoredPlayers.count, 1, "There should only be one returned player with a score")
+        let scoredPlayer = scoredPlayers.first!
+        
+        XCTAssertEqual(scoredPlayer.id, player1.id, "Player should retain the same ID")
+        XCTAssertEqual(scoredPlayer.name, player1.name, "Player should retain the same name")
+        
+        XCTAssertTrue(scoredPlayer.scoreData.isAppleKing)
+        XCTAssertTrue(scoredPlayer.scoreData.isCheeseKing)
+        XCTAssertTrue(scoredPlayer.scoreData.isBreadKing)
+        XCTAssertTrue(scoredPlayer.scoreData.isChickenKing)
+        
+        XCTAssertFalse(scoredPlayer.scoreData.isAppleQueen, "There is only one player, there should not be an Apple Queen")
+        XCTAssertFalse(scoredPlayer.scoreData.isCheeseQueen, "There is only one player, there should not be a Cheese Queen")
+        XCTAssertFalse(scoredPlayer.scoreData.isBreadQueen, "There is only one player, there should not be a Bread Queen")
+        XCTAssertFalse(scoredPlayer.scoreData.isChickenQueen, "There is only one player, there should not be a Chicken Queen")
+        
+        XCTAssertEqual(scoredPlayer.score, 291)
     }
 
     func testPerformanceExample() throws {

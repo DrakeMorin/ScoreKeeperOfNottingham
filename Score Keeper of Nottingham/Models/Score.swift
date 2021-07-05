@@ -15,17 +15,17 @@ private typealias Score = Int
 private typealias Queens = [ID]
 
 func scoreGame(for players: [Player]) -> [Player] {
-    var scoredPlayers = players
+    let scoredPlayers = players
     let appleBonuses = computeBonusScoreForGood(for: players.map { ($0.id, $0.totalApples) }, kingBonus: KING_BONUS_APPLE, queenBonus: QUEEN_BONUS_APPLE)
     let cheeseBonuses = computeBonusScoreForGood(for: players.map { ($0.id, $0.totalCheese) }, kingBonus: KING_BONUS_CHEESE, queenBonus: QUEEN_BONUS_CHEESE)
     let breadBonuses = computeBonusScoreForGood(for: players.map { ($0.id, $0.totalBread) }, kingBonus: KING_BONUS_BREAD, queenBonus: QUEEN_BONUS_BREAD)
     let chickenBonuses = computeBonusScoreForGood(for: players.map { ($0.id, $0.totalChickens) }, kingBonus: KING_BONUS_CHICKEN, queenBonus: QUEEN_BONUS_CHICKEN)
-    for i in 1..<scoredPlayers.count {
+    for i in 0..<scoredPlayers.count {
         let id = scoredPlayers[i].id
         scoredPlayers[i].scoreData = PlayerScore(
             score: computeRawMaterialScore(for: scoredPlayers[i]) + computeBonusScore(for: scoredPlayers[i], appleBonuses: appleBonuses, cheeseBonuses: cheeseBonuses, breadBonuses: breadBonuses, chickenBonuses: chickenBonuses),
             isAppleKing: appleBonuses.0.contains(id), isAppleQueen: appleBonuses.2.contains(id),
-            isCheeseKing: cheeseBonuses.0.contains(id), isCheeseQueen: cheeseBonuses.0.contains(id),
+            isCheeseKing: cheeseBonuses.0.contains(id), isCheeseQueen: cheeseBonuses.2.contains(id),
             isBreadKing: breadBonuses.0.contains(id), isBreadQueen: breadBonuses.2.contains(id),
             isChickenKing: chickenBonuses.0.contains(id), isChickenQueen: chickenBonuses.2.contains(id)
         )
@@ -99,6 +99,7 @@ private func computeBonusScoreForGood(for players: [(ID, Count)], kingBonus: Int
         return (kings, scorePerPlayer, [], 0)
     }
     
+    // If we make it here, there must only be one player with the king bonus
     guard let kingPlayer = sortedPlayers.first?.0 else { return ([], 0, [], 0) }
     
     // Award the queen bonus

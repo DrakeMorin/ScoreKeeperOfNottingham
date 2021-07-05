@@ -7,11 +7,12 @@
 //
 
 import SwiftUI
+import Combine
 
 struct PlayerDetail: View {
     @EnvironmentObject var listData: ListData
     @State var isRoyalGoodsEnabled = false
-    var player: Player
+    @State var player: Player
     
     var playerIndex: Int {
         listData.playerData.firstIndex(where: { $0.id == player.id })!
@@ -26,6 +27,9 @@ struct PlayerDetail: View {
                 )
                     .frame(width: 160)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+//                    .onReceive(Just(player.$name)) { newValue in
+//                        listData.playerData[playerIndex].name = newValue
+//                    }
             }
             Group {
                 NumericTextField(text: "Apples")
