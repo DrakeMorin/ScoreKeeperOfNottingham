@@ -20,10 +20,10 @@ func scoreGame(for players: [Player]) -> [Player] {
     let cheeseBonuses = computeBonusScoreForGood(for: players.map { ($0.id, $0.totalCheese) }, kingBonus: KING_BONUS_CHEESE, queenBonus: QUEEN_BONUS_CHEESE)
     let breadBonuses = computeBonusScoreForGood(for: players.map { ($0.id, $0.totalBread) }, kingBonus: KING_BONUS_BREAD, queenBonus: QUEEN_BONUS_BREAD)
     let chickenBonuses = computeBonusScoreForGood(for: players.map { ($0.id, $0.totalChickens) }, kingBonus: KING_BONUS_CHICKEN, queenBonus: QUEEN_BONUS_CHICKEN)
-    for i in 0..<scoredPlayers.count {
-        let id = scoredPlayers[i].id
-        scoredPlayers[i].scoreData = PlayerScore(
-            score: computeRawMaterialScore(for: scoredPlayers[i]) + computeBonusScore(for: scoredPlayers[i], appleBonuses: appleBonuses, cheeseBonuses: cheeseBonuses, breadBonuses: breadBonuses, chickenBonuses: chickenBonuses),
+    for player in scoredPlayers {
+        let id = player.id
+        player.scoreData = PlayerScore(
+            score: computeRawMaterialScore(for: player) + computeBonusScore(for: player, appleBonuses: appleBonuses, cheeseBonuses: cheeseBonuses, breadBonuses: breadBonuses, chickenBonuses: chickenBonuses),
             isAppleKing: appleBonuses.0.contains(id), isAppleQueen: appleBonuses.2.contains(id),
             isCheeseKing: cheeseBonuses.0.contains(id), isCheeseQueen: cheeseBonuses.2.contains(id),
             isBreadKing: breadBonuses.0.contains(id), isBreadQueen: breadBonuses.2.contains(id),
