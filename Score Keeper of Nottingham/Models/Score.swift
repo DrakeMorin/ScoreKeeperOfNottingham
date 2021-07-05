@@ -150,6 +150,10 @@ private func orderScores(_ scoredPlayers: [Player]) -> [Player] {
             finalPlayers[i].scoreData.isWinner = true
         }
     }
+    finalPlayers.sort { p1, p2 in
+        // p1 should precede p2 always unless p2 is a winner and p1 is not.
+        return p1.score > p2.score
+    }
     
     return finalPlayers
 }
