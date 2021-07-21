@@ -13,8 +13,6 @@
 		DE8C90C82501C20800C951EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8C90C72501C20800C951EB /* Assets.xcassets */; };
 		DE8C90CB2501C20800C951EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8C90CA2501C20800C951EB /* Preview Assets.xcassets */; };
 		DE8C90CE2501C20800C951EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8C90CC2501C20800C951EB /* LaunchScreen.storyboard */; };
-		DE8C90D92501C20900C951EB /* Score_Keeper_of_NottinghamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C90D82501C20900C951EB /* Score_Keeper_of_NottinghamTests.swift */; };
-		DE8C90E42501C20900C951EB /* Score_Keeper_of_NottinghamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C90E32501C20900C951EB /* Score_Keeper_of_NottinghamUITests.swift */; };
 		DE8C90F32501C2AF00C951EB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C90F22501C2AF00C951EB /* Constants.swift */; };
 		DE8C90F52501C48D00C951EB /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C90F42501C48D00C951EB /* Player.swift */; };
 		DE8C90F72501C5B900C951EB /* PlayerScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C90F62501C5B900C951EB /* PlayerScore.swift */; };
@@ -53,10 +51,8 @@
 		DE8C90CD2501C20800C951EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE8C90CF2501C20800C951EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE8C90D42501C20900C951EB /* Score Keeper of NottinghamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Score Keeper of NottinghamTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE8C90D82501C20900C951EB /* Score_Keeper_of_NottinghamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score_Keeper_of_NottinghamTests.swift; sourceTree = "<group>"; };
 		DE8C90DA2501C20900C951EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE8C90DF2501C20900C951EB /* Score Keeper of NottinghamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Score Keeper of NottinghamUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE8C90E32501C20900C951EB /* Score_Keeper_of_NottinghamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score_Keeper_of_NottinghamUITests.swift; sourceTree = "<group>"; };
 		DE8C90E52501C20900C951EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE8C90F22501C2AF00C951EB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DE8C90F42501C48D00C951EB /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -141,7 +137,6 @@
 		DE8C90D72501C20900C951EB /* Score Keeper of NottinghamTests */ = {
 			isa = PBXGroup;
 			children = (
-				DE8C90D82501C20900C951EB /* Score_Keeper_of_NottinghamTests.swift */,
 				DE8C90DA2501C20900C951EB /* Info.plist */,
 			);
 			path = "Score Keeper of NottinghamTests";
@@ -150,7 +145,6 @@
 		DE8C90E22501C20900C951EB /* Score Keeper of NottinghamUITests */ = {
 			isa = PBXGroup;
 			children = (
-				DE8C90E32501C20900C951EB /* Score_Keeper_of_NottinghamUITests.swift */,
 				DE8C90E52501C20900C951EB /* Info.plist */,
 			);
 			path = "Score Keeper of NottinghamUITests";
@@ -329,7 +323,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE8C90D92501C20900C951EB /* Score_Keeper_of_NottinghamTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,7 +330,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE8C90E42501C20900C951EB /* Score_Keeper_of_NottinghamUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,36 +10,38 @@ import SwiftUI
 import Combine
 
 struct PlayerDetail: View {
-    @EnvironmentObject var listData: ListData
+//    @EnvironmentObject var listData: ListData
     @State var isRoyalGoodsEnabled = false
-    @State var player: Player
+    @ObservedObject var player: Player
     
-    var playerIndex: Int {
-        listData.playerData.firstIndex(where: { $0.id == player.id })!
-    }
+//    var playerIndex: Int {
+//        listData.playerData.firstIndex(where: { $0.id == player.id })!
+//    }
     
     var body: some View {
         ScrollView {
             HStack {
                 Text("Player Name")
                 Spacer()
-                TextField("", text: $listData.playerData[playerIndex].name
-                )
+                TextField("", text:$player.name)
                     .frame(width: 160)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+//                TextField("", text: $listData.playerData[playerIndex].name)
+//                    .frame(width: 160)
+//                    .textFieldStyle(RoundedBorderTextFieldStyle())
 //                    .onReceive(Just(player.$name)) { newValue in
 //                        listData.playerData[playerIndex].name = newValue
 //                    }
             }
             Group {
-                NumericTextField(text: "Apples")
-                NumericTextField(text: "Cheese")
-                NumericTextField(text: "Bread")
-                NumericTextField(text: "Chickens")
-                NumericTextField(text: "Pepper")
-                NumericTextField(text: "Mead")
-                NumericTextField(text: "Silk")
-                NumericTextField(text: "Crossbows")
+                NumericTextField(value: $player.appleCount, text: "Apples")
+                NumericTextField(value: $player.cheeseCount,text: "Cheese")
+                NumericTextField(value: $player.breadCount,text: "Bread")
+                NumericTextField(value: $player.chickenCount,text: "Chickens")
+                NumericTextField(value: $player.pepperCount,text: "Pepper")
+                NumericTextField(value: $player.meadCount,text: "Mead")
+                NumericTextField(value: $player.silkCount,text: "Silk")
+                NumericTextField(value: $player.crossbowCount,text: "Crossbows")
             }
             
             Toggle(isOn: $isRoyalGoodsEnabled) {
@@ -48,13 +50,13 @@ struct PlayerDetail: View {
             
             if isRoyalGoodsEnabled {
                 Group {
-                    NumericTextField(text: "Green Apples")
-                    NumericTextField(text: "Golden Apples")
-                    NumericTextField(text: "Gouda")
-                    NumericTextField(text: "Blue Cheese")
-                    NumericTextField(text: "Rye")
-                    NumericTextField(text: "Pumpernickel")
-                    NumericTextField(text: "Dual Chickens")
+                    NumericTextField(value: $player.greenApplesCount,text: "Green Apples")
+                    NumericTextField(value: $player.goldenApplesCount,text: "Golden Apples")
+                    NumericTextField(value: $player.goudaCheeseCount,text: "Gouda")
+                    NumericTextField(value: $player.blueCheseCount,text: "Blue Cheese")
+                    NumericTextField(value: $player.ryeBreadCount,text: "Rye")
+                    NumericTextField(value: $player.pumpernickelCount,text: "Pumpernickel")
+                    NumericTextField(value: $player.dualChickenCount,text: "Dual Chickens")
                 }
             }
         }
@@ -63,9 +65,9 @@ struct PlayerDetail: View {
     }
 }
 
-struct PlayerDetail_Previews: PreviewProvider {
-    static var previews: some View {
-        PlayerDetail(player: dummyPlayer)
-            .environmentObject(ListData())
-    }
-}
+//struct PlayerDetail_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PlayerDetail(player: dummyPlayer)
+//            .environmentObject(ListData())
+//    }
+//}

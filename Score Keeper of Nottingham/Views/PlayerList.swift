@@ -9,11 +9,11 @@
 import SwiftUI
 
 struct PlayerList: View {
-    @EnvironmentObject var listData: ListData
+    @ObservedObject var listData: ListData
 
     var body: some View {
         NavigationView {
-            List(listData.playerData) { player in
+            List(listData.playerData, id: \.id) { player in
                 NavigationLink(destination: PlayerDetail(player: player)) {
                     PlayerRow(player: player)
                 }
@@ -37,9 +37,9 @@ struct PlayerList: View {
     }
 }
 
-struct PlayerList_Previews: PreviewProvider {
-    static var previews: some View {
-        PlayerList()
-            .environmentObject(ListData())
-    }
-}
+//struct PlayerList_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PlayerList()
+//            .environmentObject(ListData())
+//    }
+//}

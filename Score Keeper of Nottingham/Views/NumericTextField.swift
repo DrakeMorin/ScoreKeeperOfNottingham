@@ -10,31 +10,29 @@ import SwiftUI
 import Combine
 
 struct NumericTextField: View {
-    @State private var value = "" // Empty will show a 0 placeholder
+    
+    @Binding var value: Int
     let text: String
     
     var body: some View {
         HStack{
             Text(self.text)
             Spacer()
-            TextField("0", text: $value)
+            TextField("0", text: Binding(
+                    get: { String(value) },
+                    set: { value = Int($0.filter { "0123456789".contains($0) }) ?? 0 }
+                ))
                 .frame(width: 40)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .keyboardType(.numberPad)
                 .multilineTextAlignment(.trailing)
-                .onReceive(Just(value)) { newValue in
-                    let filtered = newValue.filter { "0123456789".contains($0) }
-                    if filtered != newValue {
-                        self.value = filtered
-                    }
-                }
         }
         
     }
 }
 
-struct NumericTextField_Previews: PreviewProvider {
-    static var previews: some View {
-        NumericTextField(text: "Chickens:")
-    }
-}
+//struct NumericTextField_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NumericTextField(text: "Chickens:")
+//    }
+//}
