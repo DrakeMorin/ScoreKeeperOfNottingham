@@ -9,8 +9,9 @@
 import Foundation
 import Combine
 
-class Player: ObservableObject, Identifiable {
-    internal init(name: String = "", appleCount: Int = 0, cheeseCount: Int = 0, breadCount: Int = 0, chickenCount: Int = 0, pepperCount: Int = 0, meadCount: Int = 0, silkCount: Int = 0, crossbowCount: Int = 0, coinageValue: Int = 0, greenApplesCount: Int = 0, goldenApplesCount: Int = 0, goudaCheeseCount: Int = 0, blueCheseCount: Int = 0, ryeBreadCount: Int = 0, pumpernickelCount: Int = 0, dualChickenCount: Int = 0, scoreData: PlayerScore = PlayerScore()) {
+struct Player: Identifiable {
+    internal init(id: UUID = UUID(), name: String = "", appleCount: Int = 0, cheeseCount: Int = 0, breadCount: Int = 0, chickenCount: Int = 0, pepperCount: Int = 0, meadCount: Int = 0, silkCount: Int = 0, crossbowCount: Int = 0, coinageValue: Int = 0, greenApplesCount: Int = 0, goldenApplesCount: Int = 0, goudaCheeseCount: Int = 0, blueCheseCount: Int = 0, ryeBreadCount: Int = 0, pumpernickelCount: Int = 0, dualChickenCount: Int = 0, scoreData: PlayerScore = PlayerScore()) {
+        self.id = id
         self.name = name
         self.appleCount = appleCount
         self.cheeseCount = cheeseCount
@@ -31,31 +32,35 @@ class Player: ObservableObject, Identifiable {
         self.scoreData = scoreData
     }
     
+    init(copy player: Player, scoreData: PlayerScore) {
+        self.init(id: player.id, name: player.name, appleCount: player.appleCount, cheeseCount: player.cheeseCount, breadCount: player.breadCount, chickenCount: player.chickenCount, pepperCount: player.pepperCount, meadCount: player.meadCount, silkCount: player.silkCount, crossbowCount: player.silkCount, coinageValue: player.silkCount, greenApplesCount: player.silkCount, goldenApplesCount: player.silkCount, goudaCheeseCount: player.silkCount, blueCheseCount: player.silkCount, ryeBreadCount: player.silkCount, pumpernickelCount: player.silkCount, dualChickenCount: player.silkCount, scoreData: scoreData)
+    }
     
-    let id = UUID()
-    @Published var name: String// {
+    
+    let id: UUID
+    var name: String = "New player"// {
 //        didSet{
 //            id = UUID()
 //        }
 //    }
     // Should these be private and / or constants (à la React and the UI when an edit is made creates a new object. I think that would be excessive?)
-    @Published var appleCount = 0
-    @Published var cheeseCount = 0
-    @Published var breadCount = 0
-    @Published var chickenCount = 0
-    @Published var pepperCount = 0
-    @Published var meadCount = 0
-    @Published var silkCount = 0
-    @Published var crossbowCount = 0
-    @Published var coinageValue = 0
-    @Published var greenApplesCount = 0
-    @Published var goldenApplesCount = 0
-    @Published var goudaCheeseCount = 0
-    @Published var blueCheseCount = 0
-    @Published var ryeBreadCount = 0
-    @Published var pumpernickelCount = 0
-    @Published var dualChickenCount = 0
-    @Published var scoreData = PlayerScore()
+    var appleCount = 0
+    var cheeseCount = 0
+    var breadCount = 0
+    var chickenCount = 0
+    var pepperCount = 0
+    var meadCount = 0
+    var silkCount = 0
+    var crossbowCount = 0
+    var coinageValue = 0
+    var greenApplesCount = 0
+    var goldenApplesCount = 0
+    var goudaCheeseCount = 0
+    var blueCheseCount = 0
+    var ryeBreadCount = 0
+    var pumpernickelCount = 0
+    var dualChickenCount = 0
+    var scoreData = PlayerScore()
     
     var totalApples: Int {
         return appleCount + greenApplesCount * APPLES_ON_GREEN_APPLES + goldenApplesCount * APPLES_ON_GOLDEN_APPLES

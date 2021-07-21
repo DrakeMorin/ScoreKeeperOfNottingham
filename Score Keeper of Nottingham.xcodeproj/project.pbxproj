@@ -22,6 +22,7 @@
 		DE8C91002501E99B00C951EB /* PlayerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C90FF2501E99B00C951EB /* PlayerDetail.swift */; };
 		DE8C910225033C9800C951EB /* ListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C910125033C9800C951EB /* ListData.swift */; };
 		DE8C91042503434900C951EB /* NumericTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C91032503434900C951EB /* NumericTextField.swift */; };
+		DEA7ABB726A7E35300DDC8E4 /* ScoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA7ABB626A7E35300DDC8E4 /* ScoreTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		DE8C90FF2501E99B00C951EB /* PlayerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetail.swift; sourceTree = "<group>"; };
 		DE8C910125033C9800C951EB /* ListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListData.swift; sourceTree = "<group>"; };
 		DE8C91032503434900C951EB /* NumericTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericTextField.swift; sourceTree = "<group>"; };
+		DEA7ABB526A7E35300DDC8E4 /* Score Keeper of NottinghamTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Score Keeper of NottinghamTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		DEA7ABB626A7E35300DDC8E4 /* ScoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,10 +96,12 @@
 		DE8C90B52501C20500C951EB = {
 			isa = PBXGroup;
 			children = (
+				DEA7ABB626A7E35300DDC8E4 /* ScoreTests.swift */,
 				DE8C90C02501C20500C951EB /* Score Keeper of Nottingham */,
 				DE8C90D72501C20900C951EB /* Score Keeper of NottinghamTests */,
 				DE8C90E22501C20900C951EB /* Score Keeper of NottinghamUITests */,
 				DE8C90BF2501C20500C951EB /* Products */,
+				DEA7ABB526A7E35300DDC8E4 /* Score Keeper of NottinghamTests-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -244,6 +249,7 @@
 					};
 					DE8C90D32501C20900C951EB = {
 						CreatedOnToolsVersion = 11.7;
+						LastSwiftMigration = 1250;
 						TestTargetID = DE8C90BD2501C20500C951EB;
 					};
 					DE8C90DE2501C20900C951EB = {
@@ -323,6 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEA7ABB726A7E35300DDC8E4 /* ScoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,6 +528,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L3DY2C7H28;
 				INFOPLIST_FILE = "Score Keeper of NottinghamTests/Info.plist";
@@ -532,6 +540,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ca.drakemorin.Score-Keeper-of-NottinghamTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Score Keeper of NottinghamTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Score Keeper of Nottingham.app/Score Keeper of Nottingham";
@@ -543,6 +553,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L3DY2C7H28;
 				INFOPLIST_FILE = "Score Keeper of NottinghamTests/Info.plist";
@@ -554,6 +565,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ca.drakemorin.Score-Keeper-of-NottinghamTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Score Keeper of NottinghamTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Score Keeper of Nottingham.app/Score Keeper of Nottingham";

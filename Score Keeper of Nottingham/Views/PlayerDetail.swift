@@ -12,7 +12,7 @@ import Combine
 struct PlayerDetail: View {
 //    @EnvironmentObject var listData: ListData
     @State var isRoyalGoodsEnabled = false
-    @ObservedObject var player: Player
+    @Binding var player: Player
     
 //    var playerIndex: Int {
 //        listData.playerData.firstIndex(where: { $0.id == player.id })!

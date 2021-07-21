@@ -13,9 +13,9 @@ struct PlayerList: View {
 
     var body: some View {
         NavigationView {
-            List(listData.playerData, id: \.id) { player in
-                NavigationLink(destination: PlayerDetail(player: player)) {
-                    PlayerRow(player: player)
+            List(listData.playerData.indices) { i in
+                NavigationLink(destination: PlayerDetail(player: $listData.playerData[i])) {
+                    PlayerRow(player: $listData.playerData[i])
                 }
             }
             .navigationBarTitle("Players")
@@ -27,8 +27,7 @@ struct PlayerList: View {
     }
 
     func addNewPlayer() {
-        let newPlayer = Player()
-        newPlayer.name = "New player"
+        let newPlayer = Player(name: "New player")
         listData.playerData.append(newPlayer)
     }
 
