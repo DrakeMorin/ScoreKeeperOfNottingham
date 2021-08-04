@@ -10,13 +10,8 @@ import SwiftUI
 import Combine
 
 struct PlayerDetail: View {
-//    @EnvironmentObject var listData: ListData
     @State var isRoyalGoodsEnabled = false
     @Binding var player: Player
-    
-//    var playerIndex: Int {
-//        listData.playerData.firstIndex(where: { $0.id == player.id })!
-//    }
     
     var body: some View {
         ScrollView {
@@ -26,14 +21,9 @@ struct PlayerDetail: View {
                 TextField("", text:$player.name)
                     .frame(width: 160)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-//                TextField("", text: $listData.playerData[playerIndex].name)
-//                    .frame(width: 160)
-//                    .textFieldStyle(RoundedBorderTextFieldStyle())
-//                    .onReceive(Just(player.$name)) { newValue in
-//                        listData.playerData[playerIndex].name = newValue
-//                    }
             }
             Group {
+                NumericTextField(value: $player.coinageValue, text: "Coins")
                 NumericTextField(value: $player.appleCount, text: "Apples")
                 NumericTextField(value: $player.cheeseCount,text: "Cheese")
                 NumericTextField(value: $player.breadCount,text: "Bread")

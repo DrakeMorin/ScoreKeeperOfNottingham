@@ -33,3 +33,13 @@ struct PlayerScore {
     let isChickenQueen: Bool
     var isWinner = false
 }
+
+extension PlayerScore: Equatable {
+    static func == (lhs: PlayerScore, rhs: PlayerScore) -> Bool {
+        return lhs.score == rhs.score && lhs.isAppleKing == rhs.isAppleKing &&
+            lhs.isAppleQueen == rhs.isAppleQueen && lhs.isCheeseKing == rhs.isCheeseKing &&
+            lhs.isCheeseQueen == rhs.isCheeseQueen && lhs.isBreadKing == rhs.isBreadKing &&
+            lhs.isBreadQueen == rhs.isBreadQueen && lhs.isChickenKing == rhs.isChickenKing &&
+            lhs.isChickenQueen == rhs.isChickenQueen && lhs.isWinner == rhs.isWinner
+    }
+}

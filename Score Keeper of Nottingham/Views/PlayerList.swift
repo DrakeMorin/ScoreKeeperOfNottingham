@@ -13,16 +13,16 @@ struct PlayerList: View {
 
     var body: some View {
         NavigationView {
-            List(listData.playerData.indices) { i in
-                NavigationLink(destination: PlayerDetail(player: $listData.playerData[i])) {
-                    PlayerRow(player: $listData.playerData[i])
+            List(listData.playerData) { player in
+                let playerBinding = binding(for: player)
+                NavigationLink(destination: PlayerDetail(player: playerBinding)) {
+                    PlayerRow(player: playerBinding)
                 }
             }
             .navigationBarTitle("Players")
             .navigationBarItems(
                 trailing: Button(action: { self.addNewPlayer() }, label: { Text("Add") })
             )
-            
         }
     }
 
@@ -33,6 +33,14 @@ struct PlayerList: View {
 
     func clearPlayers() {
         listData.playerData = []
+    }
+    
+    private func binding(for player: Player) -> Binding<Player> {
+        guard let idx = listData.playerData.firstIndex(where: { $0.id == player.id }) else {
+            fatalError("Could not find player index")
+        }
+        
+        return $listData.playerData[idx]
     }
 }
 

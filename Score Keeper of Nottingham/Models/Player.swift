@@ -33,16 +33,12 @@ struct Player: Identifiable {
     }
     
     init(copy player: Player, scoreData: PlayerScore) {
-        self.init(id: player.id, name: player.name, appleCount: player.appleCount, cheeseCount: player.cheeseCount, breadCount: player.breadCount, chickenCount: player.chickenCount, pepperCount: player.pepperCount, meadCount: player.meadCount, silkCount: player.silkCount, crossbowCount: player.silkCount, coinageValue: player.silkCount, greenApplesCount: player.silkCount, goldenApplesCount: player.silkCount, goudaCheeseCount: player.silkCount, blueCheseCount: player.silkCount, ryeBreadCount: player.silkCount, pumpernickelCount: player.silkCount, dualChickenCount: player.silkCount, scoreData: scoreData)
+        self.init(id: player.id, name: player.name, appleCount: player.appleCount, cheeseCount: player.cheeseCount, breadCount: player.breadCount, chickenCount: player.chickenCount, pepperCount: player.pepperCount, meadCount: player.meadCount, silkCount: player.silkCount, crossbowCount: player.crossbowCount, coinageValue: player.coinageValue, greenApplesCount: player.greenApplesCount, goldenApplesCount: player.goldenApplesCount, goudaCheeseCount: player.goudaCheeseCount, blueCheseCount: player.blueCheseCount, ryeBreadCount: player.ryeBreadCount, pumpernickelCount: player.pumpernickelCount, dualChickenCount: player.dualChickenCount, scoreData: scoreData)
     }
     
     
     let id: UUID
-    var name: String = "New player"// {
-//        didSet{
-//            id = UUID()
-//        }
-//    }
+    var name: String = "New player"
     // Should these be private and / or constants (à la React and the UI when an edit is made creates a new object. I think that would be excessive?)
     var appleCount = 0
     var cheeseCount = 0
@@ -90,5 +86,11 @@ struct Player: Identifiable {
     
     var score: Int {
         return scoreData.score
+    }
+}
+
+extension Player: Equatable {
+    static func == (lhs: Player, rhs: Player) -> Bool {
+        return lhs.id == rhs.id && lhs.scoreData == rhs.scoreData
     }
 }
