@@ -87,6 +87,14 @@ struct Player: Identifiable {
     var score: Int {
         return scoreData.score
     }
+    
+    var hasBonuses: Bool {
+        return scoreData.hasBonuses
+    }
+    
+    var earnedBonuses: [String] {
+        return scoreData.earnedBonuses
+    }
 }
 
 extension Player: Equatable {

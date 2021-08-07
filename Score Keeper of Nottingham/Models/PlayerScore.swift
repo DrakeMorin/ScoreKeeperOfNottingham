@@ -32,6 +32,30 @@ struct PlayerScore {
     let isChickenKing: Bool
     let isChickenQueen: Bool
     var isWinner = false
+
+    var hasBonuses: Bool {
+        return isAppleKing || isAppleQueen ||
+            isCheeseKing || isCheeseQueen ||
+            isBreadKing || isBreadQueen ||
+            isChickenKing || isChickenQueen
+    }
+
+    var earnedBonuses: [String] {
+        let bonusMap = [
+            "🍎 K" : isAppleKing,
+            "🍎 Q" : isAppleQueen,
+            "🧀 K" : isCheeseKing,
+            "🧀 Q" : isCheeseQueen,
+            "🍞 K" : isBreadKing,
+            "🍞 Q" : isBreadQueen,
+            "🐓 K" : isChickenKing,
+            "🐓 Q" : isChickenQueen,
+        ]
+
+        return bonusMap.compactMap { bonus, bonusEarned in
+            bonusEarned ? bonus : nil
+        }.sorted()
+    }
 }
 
 extension PlayerScore: Equatable {
