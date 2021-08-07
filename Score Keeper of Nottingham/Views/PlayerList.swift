@@ -25,6 +25,7 @@ struct PlayerList: View {
             }
             .navigationBarTitle("Players")
             .navigationBarItems(
+                leading: Button(action: { self.clearPlayers() }, label: { Text("Clear") }),
                 trailing: Button(action: { self.addNewPlayer() }, label: { Text("Add") })
             )
         }
