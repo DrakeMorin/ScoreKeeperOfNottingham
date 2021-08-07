@@ -10,8 +10,8 @@ import SwiftUI
 import Combine
 
 struct PlayerDetail: View {
-    @State var isRoyalGoodsEnabled = false
     @Binding var player: Player
+    @Binding var isRoyalGoodsEnabled: Bool
     
     var body: some View {
         ScrollView {
@@ -54,10 +54,3 @@ struct PlayerDetail: View {
         .padding(.trailing, 8)
     }
 }
-
-//struct PlayerDetail_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PlayerDetail(player: dummyPlayer)
-//            .environmentObject(ListData())
-//    }
-//}
