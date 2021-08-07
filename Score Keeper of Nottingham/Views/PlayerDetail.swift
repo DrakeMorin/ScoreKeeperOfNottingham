@@ -21,6 +21,7 @@ struct PlayerDetail: View {
                 TextField("", text:$player.name)
                     .frame(width: 160)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .disableAutocorrection(true)
             }
             Group {
                 NumericTextField(value: $player.coinageValue, text: "Coins")
@@ -50,7 +51,7 @@ struct PlayerDetail: View {
                 }
             }
         }
-        .padding(.leading, 8)
-        .padding(.trailing, 8)
+        .padding(.horizontal, 12)
+        .navigationBarTitle(player.name)
     }
 }
