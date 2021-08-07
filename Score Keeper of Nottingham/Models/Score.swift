@@ -15,20 +15,25 @@ private typealias Score = Int
 private typealias Queens = [ID]
 
 func scoreGame(for players: [Player]) -> [Player] {
-    let scoredPlayers = players
     let appleBonuses = computeBonusScoreForGood(for: players.map { ($0.id, $0.totalApples) }, kingBonus: KING_BONUS_APPLE, queenBonus: QUEEN_BONUS_APPLE)
     let cheeseBonuses = computeBonusScoreForGood(for: players.map { ($0.id, $0.totalCheese) }, kingBonus: KING_BONUS_CHEESE, queenBonus: QUEEN_BONUS_CHEESE)
     let breadBonuses = computeBonusScoreForGood(for: players.map { ($0.id, $0.totalBread) }, kingBonus: KING_BONUS_BREAD, queenBonus: QUEEN_BONUS_BREAD)
     let chickenBonuses = computeBonusScoreForGood(for: players.map { ($0.id, $0.totalChickens) }, kingBonus: KING_BONUS_CHICKEN, queenBonus: QUEEN_BONUS_CHICKEN)
-    for player in scoredPlayers {
+    
+    let scoredPlayers = players.map { player -> Player in
         let id = player.id
-        player.scoreData = PlayerScore(
+        let scoreData = PlayerScore(
             score: computeRawMaterialScore(for: player) + computeBonusScore(for: player, appleBonuses: appleBonuses, cheeseBonuses: cheeseBonuses, breadBonuses: breadBonuses, chickenBonuses: chickenBonuses),
             isAppleKing: appleBonuses.0.contains(id), isAppleQueen: appleBonuses.2.contains(id),
             isCheeseKing: cheeseBonuses.0.contains(id), isCheeseQueen: cheeseBonuses.2.contains(id),
             isBreadKing: breadBonuses.0.contains(id), isBreadQueen: breadBonuses.2.contains(id),
             isChickenKing: chickenBonuses.0.contains(id), isChickenQueen: chickenBonuses.2.contains(id)
         )
+        let p = Player(copy: player, scoreData: scoreData)
+        if p.id != player.id {
+            print("Fuck")
+        }
+        return p
     }
     
     return orderScores(scoredPlayers)

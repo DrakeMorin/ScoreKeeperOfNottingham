@@ -9,8 +9,9 @@
 import Foundation
 import Combine
 
-class Player: ObservableObject, Identifiable {
-    internal init(name: String = "", appleCount: Int = 0, cheeseCount: Int = 0, breadCount: Int = 0, chickenCount: Int = 0, pepperCount: Int = 0, meadCount: Int = 0, silkCount: Int = 0, crossbowCount: Int = 0, coinageValue: Int = 0, greenApplesCount: Int = 0, goldenApplesCount: Int = 0, goudaCheeseCount: Int = 0, blueCheseCount: Int = 0, ryeBreadCount: Int = 0, pumpernickelCount: Int = 0, dualChickenCount: Int = 0, scoreData: PlayerScore = PlayerScore()) {
+struct Player: Identifiable {
+    internal init(id: UUID = UUID(), name: String = "", appleCount: Int = 0, cheeseCount: Int = 0, breadCount: Int = 0, chickenCount: Int = 0, pepperCount: Int = 0, meadCount: Int = 0, silkCount: Int = 0, crossbowCount: Int = 0, coinageValue: Int = 0, greenApplesCount: Int = 0, goldenApplesCount: Int = 0, goudaCheeseCount: Int = 0, blueCheseCount: Int = 0, ryeBreadCount: Int = 0, pumpernickelCount: Int = 0, dualChickenCount: Int = 0, scoreData: PlayerScore = PlayerScore()) {
+        self.id = id
         self.name = name
         self.appleCount = appleCount
         self.cheeseCount = cheeseCount
@@ -31,13 +32,13 @@ class Player: ObservableObject, Identifiable {
         self.scoreData = scoreData
     }
     
-    
-    var id = UUID()
-    @Published var name: String {
-        didSet{
-            id = UUID()
-        }
+    init(copy player: Player, scoreData: PlayerScore) {
+        self.init(id: player.id, name: player.name, appleCount: player.appleCount, cheeseCount: player.cheeseCount, breadCount: player.breadCount, chickenCount: player.chickenCount, pepperCount: player.pepperCount, meadCount: player.meadCount, silkCount: player.silkCount, crossbowCount: player.crossbowCount, coinageValue: player.coinageValue, greenApplesCount: player.greenApplesCount, goldenApplesCount: player.goldenApplesCount, goudaCheeseCount: player.goudaCheeseCount, blueCheseCount: player.blueCheseCount, ryeBreadCount: player.ryeBreadCount, pumpernickelCount: player.pumpernickelCount, dualChickenCount: player.dualChickenCount, scoreData: scoreData)
     }
+    
+    
+    let id: UUID
+    var name: String = "New player"
     // Should these be private and / or constants (à la React and the UI when an edit is made creates a new object. I think that would be excessive?)
     var appleCount = 0
     var cheeseCount = 0
@@ -85,5 +86,11 @@ class Player: ObservableObject, Identifiable {
     
     var score: Int {
         return scoreData.score
+    }
+}
+
+extension Player: Equatable {
+    static func == (lhs: Player, rhs: Player) -> Bool {
+        return lhs.id == rhs.id && lhs.scoreData == rhs.scoreData
     }
 }

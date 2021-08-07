@@ -9,37 +9,44 @@
 import SwiftUI
 
 struct PlayerList: View {
-    @EnvironmentObject var listData: ListData
+    @ObservedObject var listData: ListData
 
     var body: some View {
         NavigationView {
             List(listData.playerData) { player in
-                NavigationLink(destination: PlayerDetail(player: player)) {
-                    PlayerRow(player: player)
+                let playerBinding = binding(for: player)
+                NavigationLink(destination: PlayerDetail(player: playerBinding)) {
+                    PlayerRow(player: playerBinding)
                 }
             }
             .navigationBarTitle("Players")
             .navigationBarItems(
                 trailing: Button(action: { self.addNewPlayer() }, label: { Text("Add") })
             )
-            
         }
     }
 
     func addNewPlayer() {
-        let newPlayer = Player()
-        newPlayer.name = "New player"
+        let newPlayer = Player(name: "New player")
         listData.playerData.append(newPlayer)
     }
 
     func clearPlayers() {
         listData.playerData = []
     }
-}
-
-struct PlayerList_Previews: PreviewProvider {
-    static var previews: some View {
-        PlayerList()
-            .environmentObject(ListData())
+    
+    private func binding(for player: Player) -> Binding<Player> {
+        guard let idx = listData.playerData.firstIndex(where: { $0.id == player.id }) else {
+            fatalError("Could not find player index")
+        }
+        
+        return $listData.playerData[idx]
     }
 }
+
+//struct PlayerList_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PlayerList()
+//            .environmentObject(ListData())
+//    }
+//}

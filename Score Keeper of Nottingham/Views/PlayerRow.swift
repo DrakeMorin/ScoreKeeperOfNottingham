@@ -18,7 +18,7 @@ let dummyPlayer = Player(name: "John", appleCount: 6, cheeseCount: 3, breadCount
 )
 
 struct PlayerRow: View {
-    @State var player: Player
+    @Binding var player: Player
     
     var body: some View {
         HStack{
@@ -29,9 +29,9 @@ struct PlayerRow: View {
     }
 }
 
-struct PlayerRow_Previews: PreviewProvider {
-    static var previews: some View {
-        PlayerRow(player: dummyPlayer)
-            .previewLayout(.fixed(width: 300, height: 70))
-    }
-}
+//struct PlayerRow_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PlayerRow(player: dummyPlayer)
+//            .previewLayout(.fixed(width: 300, height: 70))
+//    }
+//}

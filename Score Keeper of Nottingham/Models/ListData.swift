@@ -10,6 +10,11 @@ import SwiftUI
 import Combine
 
 final class ListData: ObservableObject {
-    @Published var playerData: [Player] = [dummyPlayer]
-    @Published var forceUpdate = false // Hack: toggle this so that the list rerenders
+    @Published var playerData: [Player] = [dummyPlayer] {
+        didSet {
+            let scoredPlayers = scoreGame(for: playerData)
+            guard playerData != scoredPlayers else { return }
+            playerData = scoredPlayers
+        }
+    }
 }

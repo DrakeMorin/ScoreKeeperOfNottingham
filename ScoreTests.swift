@@ -1,15 +1,15 @@
 //
-//  Score_Keeper_of_NottinghamTests.swift
+//  ScoreTests.swift
 //  Score Keeper of NottinghamTests
 //
-//  Created by Drake Morin on 2020-09-03.
-//  Copyright © 2020 Drake Morin. All rights reserved.
+//  Created by Drake Morin on 2021-07-21.
+//  Copyright © 2021 Drake Morin. All rights reserved.
 //
 
 import XCTest
 @testable import Score_Keeper_of_Nottingham
 
-class Score_Keeper_of_NottinghamTests: XCTestCase {
+class ScoreTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
