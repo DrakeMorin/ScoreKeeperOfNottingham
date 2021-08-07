@@ -42,15 +42,13 @@ struct BonusesView: View {
     
     var body: some View {
         VStack() {
-//            ScrollView(.horizontal, showsIndicators: false) {
-                HStack() {
-                    ForEach(bonuses, id: \.self) { bonus in
-                        let color = bonus.contains("K") ? GOLD_COLOR : SILVER_COLOR
-                        BonusCell(text: bonus, color: color)
-                    }
-                    Spacer()
+            HStack() {
+                ForEach(bonuses, id: \.self) { bonus in
+                    let color = bonus.contains("K") ? GOLD_COLOR : SILVER_COLOR
+                    BonusCell(text: bonus, color: color)
                 }
-//            }
+                Spacer()
+            }
         }
     }
 }

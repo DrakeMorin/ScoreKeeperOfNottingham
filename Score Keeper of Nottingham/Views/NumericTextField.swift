@@ -19,13 +19,19 @@ struct NumericTextField: View {
             Text(self.text)
             Spacer()
             TextField("0", text: Binding(
-                    get: { String(value) },
-                    set: { value = Int($0.filter { "0123456789".contains($0) }) ?? 0 }
-                ))
-                .frame(width: 40)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .keyboardType(.numberPad)
-                .multilineTextAlignment(.trailing)
+                get: { String(value) },
+                set: { value = Int($0.filter { "0123456789".contains($0) }) ?? 0 }
+            ))
+            .frame(width: 40)
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+            .keyboardType(.numberPad)
+            .multilineTextAlignment(.trailing)
+            .onReceive(NotificationCenter.default.publisher(for: UITextField.textDidBeginEditingNotification)) { obj in
+                if let textField = obj.object as? UITextField {
+                    // this is implicitly depends on Apple's implementation of a SwiftUI TextField. Could be fragile.
+                    textField.selectedTextRange = textField.textRange(from: textField.beginningOfDocument, to: textField.endOfDocument)
+                }
+            }
         }
         
     }

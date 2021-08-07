@@ -10,8 +10,8 @@ import SwiftUI
 import Combine
 
 struct PlayerDetail: View {
-    @State var isRoyalGoodsEnabled = false
     @Binding var player: Player
+    @Binding var isRoyalGoodsEnabled: Bool
     
     var body: some View {
         ScrollView {
@@ -21,6 +21,7 @@ struct PlayerDetail: View {
                 TextField("", text:$player.name)
                     .frame(width: 160)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .disableAutocorrection(true)
             }
             Group {
                 NumericTextField(value: $player.coinageValue, text: "Coins")
@@ -50,14 +51,7 @@ struct PlayerDetail: View {
                 }
             }
         }
-        .padding(.leading, 8)
-        .padding(.trailing, 8)
+        .padding(.horizontal, 12)
+        .navigationBarTitle(player.name)
     }
 }
-
-//struct PlayerDetail_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PlayerDetail(player: dummyPlayer)
-//            .environmentObject(ListData())
-//    }
-//}

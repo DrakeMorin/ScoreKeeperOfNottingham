@@ -20,7 +20,7 @@
 		DE8C90FC2501E2CD00C951EB /* PlayerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C90FB2501E2CD00C951EB /* PlayerRow.swift */; };
 		DE8C90FE2501E4D300C951EB /* PlayerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C90FD2501E4D300C951EB /* PlayerList.swift */; };
 		DE8C91002501E99B00C951EB /* PlayerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C90FF2501E99B00C951EB /* PlayerDetail.swift */; };
-		DE8C910225033C9800C951EB /* ListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C910125033C9800C951EB /* ListData.swift */; };
+		DE8C910225033C9800C951EB /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C910125033C9800C951EB /* Game.swift */; };
 		DE8C91042503434900C951EB /* NumericTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C91032503434900C951EB /* NumericTextField.swift */; };
 		DEA7ABB726A7E35300DDC8E4 /* ScoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA7ABB626A7E35300DDC8E4 /* ScoreTests.swift */; };
 /* End PBXBuildFile section */
@@ -62,7 +62,7 @@
 		DE8C90FB2501E2CD00C951EB /* PlayerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRow.swift; sourceTree = "<group>"; };
 		DE8C90FD2501E4D300C951EB /* PlayerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerList.swift; sourceTree = "<group>"; };
 		DE8C90FF2501E99B00C951EB /* PlayerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetail.swift; sourceTree = "<group>"; };
-		DE8C910125033C9800C951EB /* ListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListData.swift; sourceTree = "<group>"; };
+		DE8C910125033C9800C951EB /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		DE8C91032503434900C951EB /* NumericTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericTextField.swift; sourceTree = "<group>"; };
 		DEA7ABB526A7E35300DDC8E4 /* Score Keeper of NottinghamTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Score Keeper of NottinghamTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		DEA7ABB626A7E35300DDC8E4 /* ScoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTests.swift; sourceTree = "<group>"; };
@@ -162,7 +162,7 @@
 				DE8C90F42501C48D00C951EB /* Player.swift */,
 				DE8C90F62501C5B900C951EB /* PlayerScore.swift */,
 				DE8C90F82501C68F00C951EB /* Score.swift */,
-				DE8C910125033C9800C951EB /* ListData.swift */,
+				DE8C910125033C9800C951EB /* Game.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -318,7 +318,7 @@
 				DE8C91042503434900C951EB /* NumericTextField.swift in Sources */,
 				DE8C90C42501C20500C951EB /* SceneDelegate.swift in Sources */,
 				DE8C90C62501C20500C951EB /* ContentView.swift in Sources */,
-				DE8C910225033C9800C951EB /* ListData.swift in Sources */,
+				DE8C910225033C9800C951EB /* Game.swift in Sources */,
 				DE8C90F52501C48D00C951EB /* Player.swift in Sources */,
 				DE8C90F32501C2AF00C951EB /* Constants.swift in Sources */,
 				DE8C90FC2501E2CD00C951EB /* PlayerRow.swift in Sources */,
